@@ -1,0 +1,4 @@
+1. open git bash and type 
+ssh -i example.pem ubuntu@ipv4
+2. python manage.py runserver 0.0.0.0:8000
+3. Go to browser and type. ipv4:8000
