@@ -1,0 +1,11 @@
+branches:
+master
+dev
+branch1
+
+Checkout or change into "branch1"
+
+git checkout branch1
+Now create your new branch called "subbranch_of_b1" under the "branch1" using the following command.
+
+git checkout -b subbranch_of_b1 branch1
