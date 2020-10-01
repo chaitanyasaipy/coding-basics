@@ -1,0 +1,21 @@
+steps to recover the lost pem key in aws
+
+1. create new instance and create pem key in the same zone of lost instance
+2.connect to new ec2 instance. 
+
+stop the prod instance and detach volume from it and add the same 
+volume to recovery instance as secndry volume
+
+3. connect as root - sudo su
+4. create directry - mkdir /mnt/recovery-key
+4.1-lsblk
+5. mount the key - mount /dev/xvdf1 /mnt/recovery
+5.append the .ssh authorized key file 
+cat /home/ubuntu/.ssh/authkey > /mnt/recvry/home/ubuntu/.ssh/authkey
+6.umount /mnt/recovery/
+7.exit
+8.stop recvry instance and detach volume 
+9.attach the same volume to prod instance at /dev/sda1
+10. start the prod server
+git bash 
+ssh -i recovery-key.pem ubuntu@ipv4
